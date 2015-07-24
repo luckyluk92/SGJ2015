@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class employee : MonoBehaviour {
+public class Employee : MonoBehaviour {
 
 	public int productivityDecreaseTime = 1;
 	public int productivityDecreateValue = 1;
@@ -12,10 +12,10 @@ public class employee : MonoBehaviour {
 	bool isProductive;
 	float timeBetweenGain;
 
-	static int stress;
-	
+	public int stress;
 
 	public Sprite normal, unproductive, doingNothing;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -31,7 +31,7 @@ public class employee : MonoBehaviour {
 
 		DecreaseProductivity();
 
-		Debug.Log(timeBetweenGain + " " + productivity + " " ); 
+		//Debug.Log(timeBetweenGain + " " + productivity + " " ); 
 
 		if(stress > 5)
 		{
@@ -68,11 +68,13 @@ public class employee : MonoBehaviour {
 		{
 			gameObject.GetComponent<SpriteRenderer>().sprite = normal;
 			//gain money here
+			Camera.main.GetComponent<GameState>().money += productiveGain;
 		}
 		else
 		{
 			gameObject.GetComponent<SpriteRenderer>().sprite = unproductive;
 			//gain less money here
+			Camera.main.GetComponent<GameState>().money += unproductiveGain;
 		}
 			
 
