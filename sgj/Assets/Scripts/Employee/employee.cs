@@ -32,6 +32,7 @@ public class employee : MonoBehaviour {
 	void Start () 
 	{
 		_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        _gameState = Camera.main.GetComponent<GameState>();
         _spriteRenderer.color = _productiveColor;
         _productivity = initialProductivity;
         _stress = initialStress;
