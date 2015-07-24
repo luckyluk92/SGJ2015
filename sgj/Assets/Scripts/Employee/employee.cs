@@ -5,6 +5,10 @@ public class employee : MonoBehaviour {
 
 	public float productivityDecreaseTime = 1f;
     public float productivityLoss = 0.1f;
+
+    public float productivityGain = 0.3f;
+    public float stressGain = 0.3f;
+
     public float flatMoneyGain = 20f;
 
 	private float _timeBetweenGain;
@@ -28,6 +32,11 @@ public class employee : MonoBehaviour {
         {
             return _productivity > 0;
         }
+    }
+
+    public void ScreamedAt() {
+        _productivity += productivityGain;
+        _stress += stressGain;
     }
 
 	// Use this for initialization
@@ -84,5 +93,10 @@ public class employee : MonoBehaviour {
             gameObject.SendMessage("DisplayEarnings", gain);
         }
 	}
+
+    void OnTriggerEnter2D() {
+        ScreamedAt();
+        Debug.Log("Boss screamed...");
+    }
 }
 
