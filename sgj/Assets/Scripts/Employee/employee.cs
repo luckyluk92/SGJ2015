@@ -79,7 +79,9 @@ public class employee : MonoBehaviour {
         {
             _timeBetweenGain = 0;
 
-            _gameState.money += flatMoneyGain * _productivity/initialProductivity;
+            var gain = flatMoneyGain * _productivity/initialProductivity;
+            _gameState.money += gain;
+            gameObject.SendMessage("DisplayEarnings", gain);
         }
 	}
 }
