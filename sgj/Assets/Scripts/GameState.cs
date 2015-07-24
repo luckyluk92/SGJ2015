@@ -41,7 +41,6 @@ public class GameState : MonoBehaviour {
 			isThisTheEnd();
 			//Load next Day
 		}
-		Debug.Log(money);
 	
 	}
 
