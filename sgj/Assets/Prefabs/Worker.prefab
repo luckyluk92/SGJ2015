@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5062998}
   - 61: {fileID: 6175950}
   - 114: {fileID: 11408842}
+  - 114: {fileID: 11435596}
   m_Layer: 0
   m_Name: Worker
   m_TagString: Untagged
@@ -73,9 +74,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productivityDecreaseTime: 1
   productivityLoss: .0500000007
+  flatMoneyGain: 20
   initialProductivity: 1
   initialStress: 0
   _productiveColor: {r: 0, g: 1, b: 0, a: 1}
+--- !u!114 &11435596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51edca99d8e8e8044912bad0d778171b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPrefab: {fileID: 125420, guid: e63f964cc13ac2b4a8ee7f31a257d0ad, type: 2}
 --- !u!212 &21282650
 SpriteRenderer:
   m_ObjectHideFlags: 1
