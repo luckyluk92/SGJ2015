@@ -12,6 +12,14 @@ public class EarningsDisplayer : MonoBehaviour {
         var obj = Instantiate(textPrefab, newPos, Quaternion.identity) as GameObject;
         obj.transform.parent = gameObject.transform;
         TextMesh mesh = obj.GetComponent<TextMesh>();
-        mesh.text = string.Format("{0:#.0}", Convert.ToDecimal(gain));
+        if(gain > 0)
+        {
+            mesh.text = string.Format("{0:C}", Convert.ToDecimal(gain));
+        }
+        else
+        {
+            mesh.color = Color.red;
+            mesh.text = "$0.00";
+        }
     }
 }
