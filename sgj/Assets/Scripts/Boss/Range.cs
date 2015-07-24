@@ -27,6 +27,7 @@ public class Range : MonoBehaviour {
         RemoveCollider();
         var collider = gameObject.AddComponent<CircleCollider2D>();
         collider.radius = ActualRadius;
+        collider.isTrigger = true;
     }
 
     public void RemoveCollider() {
@@ -34,6 +35,7 @@ public class Range : MonoBehaviour {
     }
 	
 	void Update () {
+        RemoveCollider();
         if (Started) {
             if (_MoveType == RangeMoveType.Increase) {
                 _timer += Time.deltaTime;
@@ -61,7 +63,7 @@ public class Range : MonoBehaviour {
 
     float RangeChangeFunction() {
         if (time > 0) {
-            return maxRange * (Mathf.Cos((_timer / time) * Mathf.PI * 2) + 1) / 2.0f;
+            return maxRange * (Mathf.Sin((_timer / time) * Mathf.PI * 2) + 1) / 2.0f;
         } else {
             return 0;
         }
