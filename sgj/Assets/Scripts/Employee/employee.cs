@@ -18,6 +18,7 @@ public class employee : MonoBehaviour {
     public Color _productiveColor = new Color(0f, 1f, 0f);
 	
     private SpriteRenderer _spriteRenderer;
+    private GameState _gameState;
 
     public bool IsProductive
     {
@@ -69,7 +70,7 @@ public class employee : MonoBehaviour {
         {
             _timeBetweenGain = 0;
 
-            //flatMoneyGain * _productivity/initialProductivity <- formula for money gain
+            _gameState.money += flatMoneyGain * _productivity/initialProductivity;
         }
 	}
 }
