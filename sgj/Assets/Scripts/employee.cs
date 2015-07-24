@@ -12,10 +12,10 @@ public class employee : MonoBehaviour {
 	bool isProductive;
 	float timeBetweenGain;
 
-	static int stress;
-	
+	public int stress;
 
 	public Sprite normal, unproductive, doingNothing;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -31,7 +31,7 @@ public class employee : MonoBehaviour {
 
 		DecreaseProductivity();
 
-		Debug.Log(timeBetweenGain + " " + productivity + " " ); 
+		//Debug.Log(timeBetweenGain + " " + productivity + " " ); 
 
 		if(stress > 5)
 		{
