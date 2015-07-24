@@ -5,7 +5,7 @@ using Assets.Scripts.Boss;
 
 public class Range : MonoBehaviour {
     public float minRange = 0;
-    public float maxRange = 0;
+    public float maxRange = 1;
     public float time = 1;
 
     public bool Started { get; set; }
