@@ -181,6 +181,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1814048258}
   - 212: {fileID: 1814048257}
+  - 114: {fileID: 1814048259}
   - 114: {fileID: 1814048256}
   m_Layer: 0
   m_Name: Boss
@@ -197,10 +198,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1814048255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b153e404e62ae4a9a53895856b1c5f, type: 3}
+  m_Script: {fileID: 11500000, guid: d6462d3e89c7d9b4d9befcbdfec252d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .00499999989
+  minRange: 0
+  maxRange: 0
+  time: 1
 --- !u!212 &1814048257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -239,3 +242,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1814048259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814048255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065fc7b9cd9a98441b4ccc59903e29f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
