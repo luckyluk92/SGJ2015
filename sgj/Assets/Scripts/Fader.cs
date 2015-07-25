@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoneyFader : MonoBehaviour {
+public class Fader : MonoBehaviour {
 
     private MeshRenderer mesh;
 	// Update is called once per frame

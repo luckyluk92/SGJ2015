@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 434552}
   - 212: {fileID: 21254918}
+  - 61: {fileID: 6182822}
   m_Layer: 0
   m_Name: cubicleinside
   m_TagString: Untagged
@@ -164,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.7071447, y: -3.65481091, z: 0}
+  m_LocalPosition: {x: -12.9499998, y: -3.17000008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 434552}
@@ -213,6 +214,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .200000003, y: 1.39999998}
+--- !u!61 &6182822
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148282}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -.400000006, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .75, y: 1.39999998}
 --- !u!212 &21207838
 SpriteRenderer:
   m_ObjectHideFlags: 1
