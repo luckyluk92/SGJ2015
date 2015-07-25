@@ -5,6 +5,7 @@ public class GameState : MonoBehaviour {
 
 	public float dayTime = 60f;
 	private float _currentTime;
+	private int _currentDay;
 
 	public float wage = 100;
 
@@ -17,6 +18,7 @@ public class GameState : MonoBehaviour {
 	void Start () 
 	{
 		_currentTime = 0;
+		_currentDay = 1;
 		money = 0;
 		numberOfEmployees = 0;
 	}
@@ -38,7 +40,10 @@ public class GameState : MonoBehaviour {
 		{
 			_currentTime = 0;
 			money -= numberOfEmployees * wage;
+
 			isThisTheEnd();
+
+			++_currentDay; 
 			//Load next Day
 		}
 	
