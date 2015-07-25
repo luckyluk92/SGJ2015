@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class moveable : MonoBehaviour {
+public class Moveable : MonoBehaviour {
 
     public float speed = 0;
 	//public float rotSpeed = 20;

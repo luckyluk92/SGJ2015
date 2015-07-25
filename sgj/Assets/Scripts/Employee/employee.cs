@@ -29,6 +29,16 @@ public class employee : MonoBehaviour {
 	private GameState _gameState;
 	
 	private bool _isBeingCreated;
+    private Sleeper _sleeper;
+
+    private Sleeper _Sleeper {
+        get {
+            if (_sleeper == null) {
+                _sleeper = GetComponent<Sleeper>();
+            }
+            return _sleeper;
+        }
+    }
 	
 	public bool IsProductive
 	{
@@ -55,6 +65,7 @@ public class employee : MonoBehaviour {
         _stress = initialStress;
 		_isBeingCreated = true;
 		CalculateProductivity();
+        _Sleeper.OnAwakening.AddListener(OnAwakening);
 	}
 	
 	// Update is called once per frame
@@ -78,6 +89,11 @@ public class employee : MonoBehaviour {
 			_stress = Mathf.Clamp(_stress - stressLoss*Time.deltaTime, 0, 1f);
 			progressBar.SendMessage("ProgressUpdated", _stress);
 		}
+
+        if (_Sleeper.IsSleeping) {
+            _stress = Mathf.Clamp(2 * (_stress - stressLoss * Time.deltaTime), 0, 1f);
+            DecreaseProductivity();
+        }
 	}
 
 	void CalculateProductivity()
@@ -118,4 +134,15 @@ public class employee : MonoBehaviour {
 		Debug.Log("Boss screamed...");
 		CalculateProductivity();
 	}
+
+    void OnAwakening() {
+        _stress = Mathf.Clamp(_stress + 0.1f * _stress, 0, 1f);
+    }
+
+    void OnDrawGizmos() {
+        if (_Sleeper && _Sleeper.IsSleeping) {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y, 1), 0.2f);
+        }
+    }
 }
