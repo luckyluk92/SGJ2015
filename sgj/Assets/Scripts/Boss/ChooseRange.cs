@@ -16,7 +16,7 @@ public class ChooseRange : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space)) {
             _Range.Started = true;
-            _Range.RemoveCollider();
+            
         } else if (Input.GetKeyUp(KeyCode.Space)){
             _Range.Started = false;
             _Range.CreateCollider();

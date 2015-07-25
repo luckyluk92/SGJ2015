@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.Collections;
 
 using Assets.Scripts.Boss;
 
 public class Range : MonoBehaviour {
     public float minRange = 0;
-    public float maxRange = 0;
+    public float maxRange = 1;
     public float time = 1;
 
+    public List<AudioClip> clips;
+    AudioSource audioSource;
     public bool Started { get; set; }
 
     public float ActualRadius {
@@ -27,13 +30,22 @@ public class Range : MonoBehaviour {
         RemoveCollider();
         var collider = gameObject.AddComponent<CircleCollider2D>();
         collider.radius = ActualRadius;
+        collider.isTrigger = true;
+        int index = Random.Range(0, clips.Count - 1);
+        audioSource.clip = clips[index];
+        audioSource.Play();
     }
 
     public void RemoveCollider() {
         Destroy(GetComponent<CircleCollider2D>());
     }
+
+    void Start() {
+        audioSource = GetComponent<AudioSource>();
+    }
 	
 	void Update () {
+        RemoveCollider();
         if (Started) {
             if (_MoveType == RangeMoveType.Increase) {
                 _timer += Time.deltaTime;
@@ -61,7 +73,7 @@ public class Range : MonoBehaviour {
 
     float RangeChangeFunction() {
         if (time > 0) {
-            return maxRange * (Mathf.Cos((_timer / time) * Mathf.PI * 2) + 1) / 2.0f;
+            return maxRange * (Mathf.Sin((_timer / time) * Mathf.PI * 2) + 1) / 2.0f;
         } else {
             return 0;
         }
