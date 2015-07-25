@@ -56,8 +56,8 @@ public class Range : MonoBehaviour {
     private RangeMoveType _MoveType { get; set; }
 
     public void CreateCollider() {
-        RemoveCollider();
-        var collider = gameObject.AddComponent<CircleCollider2D>();
+        //RemoveCollider();
+        var collider = _circleInstance.AddComponent<CircleCollider2D>();
         collider.radius = ActualRadius;
         collider.isTrigger = true;
         int index = Random.Range(0, clips.Count - 1);
@@ -65,16 +65,16 @@ public class Range : MonoBehaviour {
         audioSource.Play();
     }
 
-    public void RemoveCollider() {
-        Destroy(GetComponent<CircleCollider2D>());
-    }
+    //public void RemoveCollider() {
+    //    Destroy(GetComponent<CircleCollider2D>());
+    //}
 
     void Start() {
         audioSource = GetComponent<AudioSource>();
     }
 	
 	void Update () {
-        RemoveCollider();
+        //RemoveCollider();
         if (Started) {
             _circleInstance.transform.parent = null;
             _circleInstance.transform.position = new Vector3(transform.position.x, transform.position.y, 1);

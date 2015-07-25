@@ -726,6 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayTime: 60
+  currentDay: 0
   wage: 100
   numberOfEmployees: 0
   money: 0
@@ -1918,6 +1919,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &771113593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771113587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b153e404e62ae4a9a53895856b1c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: .0799999982
 --- !u!1001 &781687147
 Prefab:
   m_ObjectHideFlags: 0
@@ -4146,7 +4159,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6174712, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11471330, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1835786317
