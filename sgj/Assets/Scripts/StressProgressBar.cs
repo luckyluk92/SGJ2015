@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProgressBar : MonoBehaviour {
+public class StressProgressBar : MonoBehaviour {
 
     public Texture progressBarEmpty, progressBarFull;
     public float progress;
