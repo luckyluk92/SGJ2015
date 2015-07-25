@@ -24,6 +24,8 @@ public class employee : MonoBehaviour {
     private SpriteRenderer _spriteRenderer;
     private GameState _gameState;
 
+	private bool _isBeingCreated;
+
     public bool IsProductive
     {
         get
@@ -33,7 +35,7 @@ public class employee : MonoBehaviour {
     }
 
     public void ScreamedAt() {
-        _productivity += productivityGain;
+        _productivity = Mathf.Clamp(_productivity + productivityGain, 0, initialProductivity);
         _stress += stressGain;
     }
 
@@ -45,11 +47,17 @@ public class employee : MonoBehaviour {
         _spriteRenderer.color = _productiveColor;
         _productivity = initialProductivity;
         _stress = initialStress;
+		_isBeingCreated = true;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if(_isBeingCreated) //It's crap, but it works.
+		{
+			_isBeingCreated = false;
+			++_gameState.numberOfEmployees;
+		}
         GainMoney();
         DecreaseProductivity();
 

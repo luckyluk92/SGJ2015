@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.Collections;
 
 using Assets.Scripts.Boss;
@@ -22,6 +23,9 @@ public class Range : MonoBehaviour {
             _started = value;
         }
     }
+
+    public List<AudioClip> clips;
+    AudioSource audioSource;
 
     public float ActualRadius {
         get {
@@ -56,6 +60,9 @@ public class Range : MonoBehaviour {
         var collider = gameObject.AddComponent<CircleCollider2D>();
         collider.radius = ActualRadius;
         collider.isTrigger = true;
+        int index = Random.Range(0, clips.Count - 1);
+        audioSource.clip = clips[index];
+        audioSource.Play();
     }
 
     public void RemoveCollider() {
@@ -63,6 +70,7 @@ public class Range : MonoBehaviour {
     }
 
     void Start() {
+        audioSource = GetComponent<AudioSource>();
     }
 	
 	void Update () {
