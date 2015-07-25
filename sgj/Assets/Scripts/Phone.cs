@@ -20,7 +20,11 @@ public class Phone : MonoBehaviour {
 
 	public float ringingChanceThreshold = .9f;
 	
+    public AudioClip hangupClip;
+    public AudioClip pickupClip;
+    public AudioClip callingClip;
 
+    private AudioSource _source;
 	private GameState _gameState;
 	// Use this for initialization
 	void Start () {
@@ -30,6 +34,7 @@ public class Phone : MonoBehaviour {
 		_currentTime = 0;
 
 		progressBar.GetComponent<StressProgressBar>().isVisible = false;
+        _source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -38,9 +43,11 @@ public class Phone : MonoBehaviour {
 		if((int)(_gameState.DayProgress*100) % 25 == 0 && _gameState.currentTime != 0)
 		{
 			float diceThrow = Random.value;
-            Debug.Log(diceThrow);
-			if(diceThrow > ringingChanceThreshold && !isBossSpeaking) {
+			if(diceThrow > ringingChanceThreshold && !isBossSpeaking && !isRinging) {
 				isRinging = true;
+                _source.clip = callingClip;
+                _source.loop = true;
+                _source.Play();
                 gameObject.SendMessage("DoShake");
                 gameObject.GetComponent<Animator>().SetBool("Calling", true);
             }
@@ -77,6 +84,9 @@ public class Phone : MonoBehaviour {
 
     void StartTalking()
     {
+        _source.Stop();
+        _source.loop = false;
+        _source.PlayOneShot(pickupClip);
         CalculateSpeakingTime();
 
         isRinging = false;
@@ -90,9 +100,11 @@ public class Phone : MonoBehaviour {
     {
         if(Mathf.Abs(_totalTime - speakingTime) < 0.1f)
         {
+            _source.Stop();
+            _source.loop = false;
+            _source.PlayOneShot(hangupClip);
             _gameState.money += moneyPerSecond*speakingTime;
 			gameObject.SendMessage("DisplayEarnings", moneyPerSecond*speakingTime);
-            Debug.Log(moneyPerSecond* speakingTime);
             isBossSpeaking = false;
             _totalTime = 0;
             progressBar.GetComponent<StressProgressBar>().isVisible = false;
@@ -101,8 +113,13 @@ public class Phone : MonoBehaviour {
 
     void StopTalking()
     {
-        isBossSpeaking = false;
-        _totalTime = 0;
-        progressBar.GetComponent<StressProgressBar>().isVisible = false;
+        if(isBossSpeaking) {
+            _source.Stop();
+            _source.loop = false;
+            _source.PlayOneShot(hangupClip);
+            isBossSpeaking = false;
+            _totalTime = 0;
+            progressBar.GetComponent<StressProgressBar>().isVisible = false;
+        }
     }
 }
