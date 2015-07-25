@@ -42,6 +42,7 @@ public class employee : MonoBehaviour {
 		_productivity = Mathf.Clamp(_productivity + productivityGain, 0, initialProductivity);
 		_stress = Mathf.Clamp(_stress+stressGain, 0, 1f);
 		progressBar.SendMessage("ProgressUpdated", _stress);
+        gameObject.SendMessage("DoShake");
 	}
 	
 	// Use this for initialization
