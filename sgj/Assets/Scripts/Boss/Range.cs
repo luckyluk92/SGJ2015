@@ -5,13 +5,27 @@ using System.Collections;
 using Assets.Scripts.Boss;
 
 public class Range : MonoBehaviour {
+    public GameObject circle;
     public float minRange = 0;
     public float maxRange = 1;
     public float time = 1;
 
+    public bool Started {
+        get {
+            return _started;
+        }
+        set {
+            if (value && !_started) {
+                ShowCircle();
+            } else if (!value && _started && _circleInstance != null) {
+                _circleInstance.GetComponent<Animator>().SetTrigger("Hide");
+            }
+            _started = value;
+        }
+    }
+
     public List<AudioClip> clips;
     AudioSource audioSource;
-    public bool Started { get; set; }
 
     public float ActualRadius {
         get {
@@ -21,8 +35,23 @@ public class Range : MonoBehaviour {
             _radius = Mathf.Clamp(value, minRange, maxRange);
         }
     }
+
+    private SpriteRenderer _Renderer {
+        get {
+            if (_spriteRenderer == null && _circleInstance != null) {
+                _spriteRenderer = _circleInstance.GetComponent<SpriteRenderer>();
+                _spritesSize = _spriteRenderer.bounds.size;
+            }
+            return _spriteRenderer;
+        }
+    }
+
+    private SpriteRenderer _spriteRenderer;
+    private GameObject _circleInstance;
+    private Vector3 _spritesSize;
     private float _radius = 0;
     private float _timer = 0;
+    private bool _started;
 
     private RangeMoveType _MoveType { get; set; }
 
@@ -56,6 +85,10 @@ public class Range : MonoBehaviour {
             ActualRadius = RangeChangeFunction();
             UpdateMoveType();
 
+            Debug.Log(_Renderer);
+            Debug.Log(_spritesSize);
+            if(_spriteRenderer != null)
+                _spriteRenderer.transform.localScale = new Vector3(2*ActualRadius / _spritesSize.x, 2*ActualRadius / _spritesSize.y, 1);
         } else {
             _MoveType = RangeMoveType.Increase;
             ActualRadius = minRange;
@@ -73,10 +106,21 @@ public class Range : MonoBehaviour {
 
     float RangeChangeFunction() {
         if (time > 0) {
-            return maxRange * (Mathf.Sin((_timer / time) * Mathf.PI * 2) + 1) / 2.0f;
+            return maxRange * Mathf.Abs((Mathf.Sin((_timer / time) * Mathf.PI * 2)));
         } else {
             return 0;
         }
+    }
+
+    void ShowCircle() {
+        _circleInstance = Instantiate(circle);
+        _circleInstance.transform.parent = transform;
+        _circleInstance.transform.localPosition = Vector3.forward;
+        _circleInstance.GetComponent<SpriteFader>().onDestroy.AddListener(HideCircle);
+    }
+
+    void HideCircle() {
+        _spriteRenderer = null;
     }
 
     void OnDrawGizmos() {
