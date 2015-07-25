@@ -1743,6 +1743,7 @@ GameObject:
   - 124: {fileID: 780822278}
   - 81: {fileID: 780822277}
   - 114: {fileID: 780822282}
+  - 114: {fileID: 780822283}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1832,6 +1833,21 @@ MonoBehaviour:
   wage: 60
   numberOfEmployees: 0
   money: 0
+--- !u!114 &780822283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780822276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce1d52b8c8c1ee49806ee6ca004217f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakePosition: 1
+  shakeRotation: 1
+  shakeIntensity: .150000006
+  shakeDecay: .00499999989
 --- !u!1 &797405896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,6 +2315,9 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11471330, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
+    - {fileID: 8203432, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
+    - {fileID: 11475464, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
+    - {fileID: 11421522, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &937354333

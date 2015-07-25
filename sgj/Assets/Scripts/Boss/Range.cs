@@ -62,6 +62,9 @@ public class Range : MonoBehaviour {
         int index = Random.Range(0, clips.Count - 1);
         audioSource.clip = clips[index];
         audioSource.Play();
+        var shaker = Camera.main.GetComponent<ShakeCamera>();
+        shaker.shakeDecay = clips[index].length/360f;
+        shaker.SendMessage("DoShake");
     }
 
     void Start() {
