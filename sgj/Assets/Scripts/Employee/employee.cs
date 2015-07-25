@@ -4,9 +4,11 @@ using System.Collections;
 public class employee : MonoBehaviour {
 
 	public float productivityDecreaseTime = 1f;
-    public float productivityLoss = 0.1f;
+	private float productivityLoss ;//= 0.1f;
+	public float minProductivityLoss = 0.01f;
+	public float maxProductivityLoss = 0.1f;
 
-    public float productivityGain = 0.3f;
+    public float productivityGain = 10.3f;
     public float stressGain = 0.3f;
 
     public float flatMoneyGain = 20f;
@@ -36,7 +38,7 @@ public class employee : MonoBehaviour {
 
     public void ScreamedAt() {
         _productivity = Mathf.Clamp(_productivity + productivityGain, 0, initialProductivity);
-        _stress += stressGain;
+		_stress += stressGain;
     }
 
 	// Use this for initialization
@@ -48,6 +50,8 @@ public class employee : MonoBehaviour {
         _productivity = initialProductivity;
         _stress = initialStress;
 		_isBeingCreated = true;
+
+		productivityLoss = CalculateProductivity();
 	}
 	
 	// Update is called once per frame
@@ -97,6 +101,13 @@ public class employee : MonoBehaviour {
     void OnTriggerEnter2D() {
         ScreamedAt();
         Debug.Log("Boss screamed...");
+		productivityLoss = CalculateProductivity();
     }
+
+	float CalculateProductivity()
+	{
+		return Random.Range(minProductivityLoss, maxProductivityLoss);
+
+	}
 }
 
