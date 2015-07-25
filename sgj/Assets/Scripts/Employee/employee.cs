@@ -22,7 +22,7 @@ public class employee : MonoBehaviour {
 	public float initialStress = 0f;
 	private float _stress;
 	
-	public Color _productiveColor = new Color(0f, 1f, 0f);
+	public Color productiveColor = new Color(0f, 1f, 0f);
 	public GameObject progressBar;
 	
 	private SpriteRenderer _spriteRenderer;
