@@ -20,7 +20,8 @@ public class employee : MonoBehaviour {
     public float initialStress = 0f;
     private float _stress;
 
-    public Color _productiveColor = new Color(0f, 1f, 0f);
+    public Color productiveColor = new Color(0f, 1f, 0f);
+
     public GameObject progressBar;
 	
     private SpriteRenderer _spriteRenderer;
@@ -47,7 +48,7 @@ public class employee : MonoBehaviour {
 	{
 		_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _gameState = Camera.main.GetComponent<GameState>();
-        _spriteRenderer.color = _productiveColor;
+        _spriteRenderer.color = productiveColor;
         _productivity = initialProductivity;
         _stress = initialStress;
 		_isBeingCreated = true;
@@ -77,14 +78,15 @@ public class employee : MonoBehaviour {
 
 	void DecreaseProductivity()
 	{
-        var newColor = Color.white;
-        newColor.g = _productiveColor.g * (1 - _productivity/initialProductivity);
-        _spriteRenderer.color = Color.Lerp(_spriteRenderer.color, newColor, productivityLoss*Time.deltaTime);
+        var tColor = productiveColor * _productivity;
+        tColor.a = 1f;
+        var newColor = Color.Lerp(_spriteRenderer.color, tColor, 1 - _productivity/initialProductivity);
+
+        _spriteRenderer.color = newColor;
 		
 		if(_productivity > 0)
 		{
             _productivity -= productivityLoss*Time.deltaTime;
-
 		}
 	}
 
@@ -107,4 +109,3 @@ public class employee : MonoBehaviour {
         Debug.Log("Boss screamed...");
     }
 }
-
