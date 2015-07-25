@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PhonePicker : MonoBehaviour {
 
-    void OnTriggerEnter2D(Collider2D collider) {
+    void OnTriggerStay2D(Collider2D collider) {
         if(collider.name == "Phone" && collider.GetComponent<Phone>().isRinging)
         {
             collider.SendMessage("StartTalking");
