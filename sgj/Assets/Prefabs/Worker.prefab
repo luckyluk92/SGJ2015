@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6175950}
   - 114: {fileID: 11408842}
   - 114: {fileID: 11435596}
+  - 114: {fileID: 11493526}
   m_Layer: 0
   m_Name: Worker
   m_TagString: Untagged
@@ -140,6 +141,21 @@ MonoBehaviour:
   progress: 0
   size: {x: 20, y: 5}
   offset: {x: -10, y: 25}
+--- !u!114 &11493526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce1d52b8c8c1ee49806ee6ca004217f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakePosition: 1
+  shakeRotation: 1
+  shakeIntensity: .100000001
+  shakeDecay: .00100000005
 --- !u!212 &21282650
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -204,6 +220,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: maxProductivityLoss
       value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shakeIntensity
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shakeDecay
+      value: .00100000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shakePosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shakeRotation
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

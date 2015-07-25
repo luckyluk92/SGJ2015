@@ -21,6 +21,14 @@ public class GameState : MonoBehaviour {
             return _currentTime/dayTime;
         }
     }
+
+    public float Expenses
+    {
+        get
+        {
+            return numberOfEmployees * wage;
+        }
+    }
 	
 	// Use this for initialization
 	void Start () 
