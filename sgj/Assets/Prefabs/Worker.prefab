@@ -73,7 +73,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productivityDecreaseTime: 1
-  productivityLoss: .0500000007
+  productivityLoss: .100000001
+  productivityGain: .699999988
+  stressGain: .200000003
   flatMoneyGain: 20
   initialProductivity: 1
   initialStress: 0
@@ -122,7 +124,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: productivityGain
+      value: .699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stressGain
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141558}

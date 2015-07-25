@@ -35,7 +35,7 @@ public class employee : MonoBehaviour {
     }
 
     public void ScreamedAt() {
-        _productivity += productivityGain;
+        _productivity = Mathf.Clamp(_productivity + productivityGain, 0, initialProductivity);
         _stress += stressGain;
     }
 
