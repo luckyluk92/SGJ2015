@@ -4,6 +4,7 @@ using System.Collections;
 public class Moveable : MonoBehaviour {
 
     public float speed = 0;
+	//public float rotSpeed = 20;
 
     private Rigidbody2D _rigidBody;
 
@@ -12,19 +13,19 @@ public class Moveable : MonoBehaviour {
     }
 	void Update () {
         if (Input.GetKey(KeyCode.W)) {
-            _rigidBody.velocity = Vector2.up * CalculateSpeed();
+            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, CalculateSpeed());
         } 
 
         if (Input.GetKey(KeyCode.S)) {
-            _rigidBody.velocity = Vector2.down * CalculateSpeed();
+            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, -CalculateSpeed());
         }
 
         if (Input.GetKey(KeyCode.A)) {
-            _rigidBody.velocity = Vector2.left * CalculateSpeed();
+            _rigidBody.velocity = new Vector2(-CalculateSpeed(), _rigidBody.velocity.y);
         }
 
         if (Input.GetKey(KeyCode.D)) {
-            _rigidBody.velocity = Vector2.right * CalculateSpeed();
+            _rigidBody.velocity = new Vector2(CalculateSpeed(), _rigidBody.velocity.y);
         }
         
         
@@ -33,6 +34,13 @@ public class Moveable : MonoBehaviour {
         } else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)){
             _rigidBody.velocity = new Vector2(0, _rigidBody.velocity.y);
         }
+
+        //if (Input.GetKey(KeyCode.Q)) {
+        //    transform.Rotate(new Vector3(0,0,1)*rotSpeed*Time.deltaTime,Space.Self);
+        //}
+        //if (Input.GetKey(KeyCode.E)) {
+        //    transform.Rotate(new Vector3(0,0,-1)*rotSpeed*Time.deltaTime,Space.Self);
+        //}
 	}
 
     float CalculateSpeed() {

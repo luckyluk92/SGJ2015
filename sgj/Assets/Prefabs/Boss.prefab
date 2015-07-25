@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b153e404e62ae4a9a53895856b1c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .00079999998
+  speed: .00120000006
 --- !u!212 &21214654
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -104,7 +104,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: .00120000006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166126}
