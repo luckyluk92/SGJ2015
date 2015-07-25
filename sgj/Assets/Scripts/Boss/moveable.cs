@@ -11,7 +11,7 @@ public class moveable : MonoBehaviour {
     void Start() {
         _rigidBody = GetComponent<Rigidbody2D>();
     }
-	void Update () {
+	void FixedUpdate () {
         if (Input.GetKey(KeyCode.W)) {
             _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, CalculateSpeed());
         } 
@@ -45,7 +45,7 @@ public class moveable : MonoBehaviour {
 
     float CalculateSpeed() {
         if (Time.deltaTime > 0) {
-            return speed / Time.deltaTime;
+            return speed / Time.fixedDeltaTime;
         } else {
             return 0;
         }

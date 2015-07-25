@@ -3379,6 +3379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayTime: 30
+  currentTime: 0
   currentDay: 0
   wage: 60
   numberOfEmployees: 0
