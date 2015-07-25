@@ -7,6 +7,7 @@ public class ChooseRange : MonoBehaviour {
     public float coolTime;
 
     private Cooldown _timeCooler;
+    private bool _wasDown;
 
     private Range _range;
     private Range _Range {
@@ -27,9 +28,11 @@ public class ChooseRange : MonoBehaviour {
         if (!_timeCooler.IsCooling) {
             if (Input.GetKeyDown(KeyCode.Space)) {
                 _Range.Started = true;
+                _wasDown = true;
 
-            } else if (Input.GetKeyUp(KeyCode.Space)) {
+            } else if (Input.GetKeyUp(KeyCode.Space) && _wasDown) {
                 _Range.Started = false;
+                _wasDown = false;
                 _Range.CreateCollider();
                 Debug.Log("Chosen radius: " + _Range.ActualRadius);
                 _timeCooler.StartCooling(coolTime);
