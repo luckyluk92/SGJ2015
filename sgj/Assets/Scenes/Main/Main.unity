@@ -4539,7 +4539,10 @@ MonoBehaviour:
   maxSpeakingTime: 6
   moneyPerSecond: 65
   ringingTime: 8
-  ringingChanceThreshold: .899999976
+  ringingChanceThreshold: .75
+  hangupClip: {fileID: 8300000, guid: 888f1104f8dc9ed43a7ab3730b6d7604, type: 3}
+  pickupClip: {fileID: 8300000, guid: a0c2fcf79d41f6e4bba0b22ee15416a5, type: 3}
+  callingClip: {fileID: 8300000, guid: c516e5315fcdd46428315b51df879b60, type: 3}
 --- !u!58 &1001069099
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4626,7 +4629,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: .800000012
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -6043,8 +6046,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2030010738}
-  - {fileID: 103988360}
   - {fileID: 1312696254}
+  - {fileID: 103988360}
   - {fileID: 1614817248}
   - {fileID: 1639399159}
   - {fileID: 1607989493}
@@ -6408,7 +6411,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498656, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 141558, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
       propertyPath: m_Name
@@ -6925,7 +6928,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498656, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 141558, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
       propertyPath: m_Name

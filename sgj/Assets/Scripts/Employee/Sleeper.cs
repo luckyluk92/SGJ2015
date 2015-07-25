@@ -57,7 +57,7 @@ public class Sleeper : MonoBehaviour {
                 IsSleeping = true;
             }
         } else {
-            _timer += Time.deltaTime;
+            _timer += Time.deltaTime*Random.value;
         }
 	}
 
