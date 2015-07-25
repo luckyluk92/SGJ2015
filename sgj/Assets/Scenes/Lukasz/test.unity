@@ -2174,9 +2174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6462d3e89c7d9b4d9befcbdfec252d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circle: {fileID: 158452, guid: 9d1bac2981fb73d4286cf69562891a84, type: 2}
   minRange: 0
-  maxRange: 1
-  time: 1
+  maxRange: 5
+  time: 3
 --- !u!114 &931379867
 MonoBehaviour:
   m_ObjectHideFlags: 0
