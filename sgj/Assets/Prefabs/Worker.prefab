@@ -20,6 +20,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &158920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 410562}
+  - 114: {fileID: 11441446}
+  m_Layer: 0
+  m_Name: Progress Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &410562
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 498656}
+  m_RootOrder: 0
 --- !u!4 &498656
 Transform:
   m_ObjectHideFlags: 1
@@ -27,9 +55,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.02315617, y: -4.31079292, z: 0}
+  m_LocalPosition: {x: 6.30000019, y: -1.66999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 410562}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5062998
@@ -74,12 +103,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productivityDecreaseTime: 1
   productivityLoss: .100000001
-  productivityGain: .699999988
-  stressGain: .200000003
+  productivityGain: .75
+  stressLoss: .0299999993
+  stressGain: .349999994
   flatMoneyGain: 20
   initialProductivity: 1
   initialStress: 0
   _productiveColor: {r: 0, g: 1, b: 0, a: 1}
+  progressBar: {fileID: 158920}
 --- !u!114 &11435596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,6 +123,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 125420, guid: e63f964cc13ac2b4a8ee7f31a257d0ad, type: 2}
+--- !u!114 &11441446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a6aecfe4121664aa9ffb825cedcba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressBarEmpty: {fileID: 2800000, guid: 81f3b770b06ff18428403dee70252fe9, type: 3}
+  progressBarFull: {fileID: 2800000, guid: 60a00a9105dcfe3438fe15f0c9a5cbb7, type: 3}
+  progress: 0
+  size: {x: 20, y: 5}
+  offset: {x: -10, y: 25}
 --- !u!212 &21282650
 SpriteRenderer:
   m_ObjectHideFlags: 1

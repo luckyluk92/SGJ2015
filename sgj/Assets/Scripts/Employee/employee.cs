@@ -7,6 +7,7 @@ public class employee : MonoBehaviour {
     public float productivityLoss = 0.1f;
 
     public float productivityGain = 0.3f;
+    public float stressLoss = 0.05f;
     public float stressGain = 0.3f;
 
     public float flatMoneyGain = 20f;
@@ -20,6 +21,7 @@ public class employee : MonoBehaviour {
     private float _stress;
 
     public Color _productiveColor = new Color(0f, 1f, 0f);
+    public GameObject progressBar;
 	
     private SpriteRenderer _spriteRenderer;
     private GameState _gameState;
@@ -36,7 +38,8 @@ public class employee : MonoBehaviour {
 
     public void ScreamedAt() {
         _productivity = Mathf.Clamp(_productivity + productivityGain, 0, initialProductivity);
-        _stress += stressGain;
+        _stress = Mathf.Clamp(_stress+stressGain, 0, 1f);
+        progressBar.SendMessage("ProgressUpdated", _stress);
     }
 
 	// Use this for initialization
@@ -64,6 +67,11 @@ public class employee : MonoBehaviour {
         if(_stress == 1f)
         {
             //TODO
+        }
+        else
+        {
+            _stress = Mathf.Clamp(_stress - stressLoss*Time.deltaTime, 0, 1f);
+            progressBar.SendMessage("ProgressUpdated", _stress);
         }
 	}
 
