@@ -26,6 +26,8 @@ public class Phone : MonoBehaviour {
 
     private AudioSource _source;
 	private GameState _gameState;
+    private float _timeToLoad = 0;
+    private float _timeInterval = 0;
 	// Use this for initialization
 	void Start () {
 		isBossSpeaking = false;
@@ -33,6 +35,7 @@ public class Phone : MonoBehaviour {
 		ringingTime = 5;
 		_currentTime = 0;
 
+        _timeInterval = _gameState.dayTime/4f;
 		progressBar.GetComponent<StressProgressBar>().isVisible = false;
         _source = GetComponent<AudioSource>();
 	}
@@ -40,8 +43,10 @@ public class Phone : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if((int)(_gameState.DayProgress*100) % 25 == 0 && _gameState.currentTime != 0)
+        _timeToLoad += Time.deltaTime;
+		if(_timeToLoad > _timeInterval && _gameState.currentTime != 0)
 		{
+            _timeToLoad = 0f;
 			float diceThrow = Random.value;
 			if(diceThrow > ringingChanceThreshold && !isBossSpeaking && !isRinging) {
 				isRinging = true;
@@ -66,6 +71,8 @@ public class Phone : MonoBehaviour {
 			if(_currentTime >= ringingTime)
 			{
 				isRinging = false;
+                _source.Stop();
+                _source.loop = false;
                 _gameState.money -= -moneyPerSecond/10*ringingTime;
                 gameObject.SendMessage("DisplayEarnings", -moneyPerSecond/10*ringingTime);
                 gameObject.GetComponent<Animator>().SetBool("Calling", false);

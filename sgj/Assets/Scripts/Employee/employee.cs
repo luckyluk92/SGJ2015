@@ -57,6 +57,14 @@ public class employee : MonoBehaviour {
 		CalculateProductivity();
 	}
 	
+    IEnumerator Dieing() {
+        var system = gameObject.GetComponent<ParticleSystem>();
+        if(!system.isPlaying)
+            system.Play();
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -70,8 +78,7 @@ public class employee : MonoBehaviour {
 		
 		if(_stress == 1f)
 		{
-            Destroy(gameObject);
-            _gameState.SendMessage("EmployeeDied");
+           StartCoroutine(Dieing());
 		}
 		else
 		{

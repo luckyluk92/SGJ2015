@@ -4539,7 +4539,10 @@ MonoBehaviour:
   maxSpeakingTime: 6
   moneyPerSecond: 65
   ringingTime: 8
-  ringingChanceThreshold: .899999976
+  ringingChanceThreshold: .75
+  hangupClip: {fileID: 8300000, guid: 888f1104f8dc9ed43a7ab3730b6d7604, type: 3}
+  pickupClip: {fileID: 8300000, guid: a0c2fcf79d41f6e4bba0b22ee15416a5, type: 3}
+  callingClip: {fileID: 8300000, guid: c516e5315fcdd46428315b51df879b60, type: 3}
 --- !u!58 &1001069099
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4626,7 +4629,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: .800000012
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
