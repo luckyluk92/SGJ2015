@@ -76,6 +76,8 @@ public class Range : MonoBehaviour {
 	void Update () {
         RemoveCollider();
         if (Started) {
+            _circleInstance.transform.parent = null;
+            _circleInstance.transform.position = new Vector3(transform.position.x, transform.position.y, 1);
             if (_MoveType == RangeMoveType.Increase) {
                 _timer += Time.deltaTime;
             } else {
