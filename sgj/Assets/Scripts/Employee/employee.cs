@@ -4,7 +4,9 @@ using System.Collections;
 public class employee : MonoBehaviour {
 	
 	public float productivityDecreaseTime = 1f;
-	public float productivityLoss = 0.1f;
+	private float productivityLoss;
+	public float minProductivityLoss = 0.01f;
+	public float maxProductivityLoss = 0.1f;
 	
 	public float productivityGain = 0.3f;
 	public float stressLoss = 0.05f;
@@ -51,6 +53,7 @@ public class employee : MonoBehaviour {
 		_productivity = initialProductivity;
 		_stress = initialStress;
 		_isBeingCreated = true;
+		CalculateProductivity();
 	}
 	
 	// Update is called once per frame
@@ -74,7 +77,12 @@ public class employee : MonoBehaviour {
 			progressBar.SendMessage("ProgressUpdated", _stress);
 		}
 	}
-	
+
+	void CalculateProductivity()
+	{
+		productivityLoss = Random.Range(minProductivityLoss, maxProductivityLoss);
+	}
+
 	void DecreaseProductivity()
 	{
 		var newColor = Color.white;
@@ -105,5 +113,6 @@ public class employee : MonoBehaviour {
 	void OnTriggerEnter2D() {
 		ScreamedAt();
 		Debug.Log("Boss screamed...");
+		CalculateProductivity();
 	}
 }
