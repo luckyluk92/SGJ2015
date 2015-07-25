@@ -153,9 +153,12 @@ public class employee : MonoBehaviour {
         _stress = Mathf.Clamp(_stress + 0.1f * _stress, 0, 1f);
     }
 
-    void OnCollisionEnter2D() {
-        _productivity = Mathf.Clamp01(_productivity - productivityGainByCollision);
-        DecreaseProductivity();
-        _stress = Mathf.Clamp01(_stress + stressGainByCollision);
+    void OnCollisionEnter2D(Collision2D coll) {
+        if(coll.gameObject.name == "Boss" && !_Sleeper.IsSleeping) {
+            _productivity = Mathf.Clamp01(_productivity + productivityGainByCollision);
+            DecreaseProductivity();
+            _stress = Mathf.Clamp01(_stress + stressGainByCollision);
+            progressBar.SendMessage("ProgressUpdated", _stress);
+        }
     }
 }

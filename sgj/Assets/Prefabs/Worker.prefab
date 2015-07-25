@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11493526}
   - 198: {fileID: 19894362}
   - 199: {fileID: 19986328}
+  - 114: {fileID: 11485546}
   m_Layer: 0
   m_Name: Worker
   m_TagString: Untagged
@@ -57,8 +58,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141558}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -11.5702868, y: -2.19118738, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.57000017, y: -4.31079292, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 410562}
@@ -107,9 +108,11 @@ MonoBehaviour:
   productivityDecreaseTime: 3
   minProductivityLoss: .00999999978
   maxProductivityLoss: .0500000007
-  productivityGain: .75
-  stressLoss: .0299999993
-  stressGain: .349999994
+  productivityGain: .699999988
+  productivityGainByCollision: .200000003
+  stressLoss: .0199999996
+  stressGain: .25
+  stressGainByCollision: .100000001
   flatMoneyGain: 10
   initialProductivity: 1
   initialStress: 0
@@ -144,6 +147,30 @@ MonoBehaviour:
   size: {x: 20, y: 5}
   offset: {x: -10, y: 25}
   isVisible: 1
+--- !u!114 &11485546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
+  OnAsleep:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnAwakening:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  probability: .00100000005
+  time: 10
 --- !u!114 &11493526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1330,6 +1357,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: zzz
+      value: 
+      objectReference: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: probability
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: time
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
