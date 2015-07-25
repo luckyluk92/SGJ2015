@@ -28,8 +28,8 @@ public class PrinterOfDoom : MonoBehaviour {
 		{
 			if(_healthPoints == 0)
 				RandomizeData();
-			else
-				Die();
+			else;
+				//Some shit
 		}
 	}
 
@@ -40,15 +40,6 @@ public class PrinterOfDoom : MonoBehaviour {
 		_healthPoints = (int)Random.Range(minHealth, maxHealth);
 	}
 
-	void Die()
-	{
-		_spawnTime += Time.deltaTime;
-		if(_spawnTime > shootingIntervals)
-		{
-			//Some effect
-			_spawnTime -= shootingIntervals;
-		}
-	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
