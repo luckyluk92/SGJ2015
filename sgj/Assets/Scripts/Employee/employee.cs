@@ -69,7 +69,8 @@ public class employee : MonoBehaviour {
 		
 		if(_stress == 1f)
 		{
-			//TODO
+            Destroy(gameObject);
+            _gameState.SendMessage("EmployeeDied");
 		}
 		else
 		{

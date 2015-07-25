@@ -5,7 +5,7 @@ public class GameState : MonoBehaviour {
 
 	public float dayTime = 60f;
 	private float _currentTime;
-	private int _currentDay;
+	public int currentDay;
 
 	public float wage = 100;
 
@@ -13,12 +13,20 @@ public class GameState : MonoBehaviour {
 	public float numberOfEmployees;
 
 	public float money;
+
+    public float DayProgress
+    {
+        get
+        {
+            return _currentTime/dayTime;
+        }
+    }
 	
 	// Use this for initialization
 	void Start () 
 	{
 		_currentTime = 0;
-		_currentDay = 1;
+		currentDay = 1;
 		money = 0;
 		numberOfEmployees = 0;
 	}
@@ -43,7 +51,7 @@ public class GameState : MonoBehaviour {
 
 			isThisTheEnd();
 
-			++_currentDay; 
+			++currentDay; 
 			//Load next Day
 		}
 	
@@ -54,4 +62,9 @@ public class GameState : MonoBehaviour {
 		if(money <= 0)
 			Debug.Log("Game Over"); //TODO
 	}
+
+    void EmployeeDied()
+    {
+        numberOfEmployees--;
+    }
 }

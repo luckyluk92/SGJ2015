@@ -101,15 +101,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a3bc63aac070843ad7e076cffa74bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productivityDecreaseTime: 1
-  productivityLoss: .100000001
+  productivityDecreaseTime: 3
+  minProductivityLoss: .00999999978
+  maxProductivityLoss: .0500000007
   productivityGain: .75
   stressLoss: .0299999993
   stressGain: .349999994
-  flatMoneyGain: 20
+  flatMoneyGain: 10
   initialProductivity: 1
   initialStress: 0
-  _productiveColor: {r: 0, g: 1, b: 0, a: 1}
+  productiveColor: {r: 0, g: 1, b: 0, a: 1}
   progressBar: {fileID: 158920}
 --- !u!114 &11435596
 MonoBehaviour:
@@ -191,6 +192,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: stressGain
       value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: flatMoneyGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: productivityDecreaseTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxProductivityLoss
+      value: .0500000007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
