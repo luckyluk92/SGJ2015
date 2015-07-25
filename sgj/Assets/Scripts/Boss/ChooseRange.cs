@@ -26,7 +26,7 @@ public class ChooseRange : MonoBehaviour {
 	void Update () {
 
         if (!_timeCooler.IsCooling) {
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.Space) && !_wasDown) {
                 _Range.Started = true;
                 _wasDown = true;
 
