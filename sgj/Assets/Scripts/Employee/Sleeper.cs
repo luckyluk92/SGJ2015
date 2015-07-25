@@ -6,14 +6,11 @@ using System.Linq;
 
 public class Sleeper : MonoBehaviour {
 
-    public GameObject zzz;
-    public int numOfletters;
+    public GameObject zzz; //ZZZzzZzzzZZzzzzZZzz!!!
     public UnityEvent OnAsleep;
     public UnityEvent OnAwakening;
     public float probability = 0;
     public float time = 2;
-
-    private List<GameObject> _lettersList;
 
     public bool IsSleeping {
         get {
@@ -22,34 +19,35 @@ public class Sleeper : MonoBehaviour {
         set {
             var prev = _isSleeping;
             _isSleeping = value;
-            if (value && !_isSleeping) {
+            if (value && !prev) {
+                _ParticleSystem.Play();
                 OnAsleep.Invoke();
-            } else if (!value && _isSleeping) {
+            } else if (!value && prev) {
+                _ParticleSystem.Stop();
+                _ParticleSystem.Clear();
                 OnAwakening.Invoke();
             }
-            _Animator.SetBool("Sleep", value);
         }
     }
 
-    private Animator _Animator {
+    private ParticleSystem _ParticleSystem {
         get {
-            if (_animator == null) {
-                _animator = GetComponent<Animator>();
+            if (_particleSystem == null && _zzzInstance != null) {
+                _particleSystem = _zzzInstance.GetComponent<ParticleSystem>();
             }
-            return _animator;
+            return _particleSystem;
         }
     }
 
     private bool _isSleeping;
-    private Animator _animator;
     private float _timer;
+    private ParticleSystem _particleSystem;
+    private GameObject _zzzInstance;
 
     void Start() {
-        _lettersList = new List<GameObject>();
-        for (int i = 0; i < numOfletters; i++) {
-            _lettersList.Add(Instantiate(zzz));
-            _lettersList.Last().transform.parent = transform;
-        }
+        _zzzInstance = Instantiate(zzz);
+        _zzzInstance.transform.parent = transform;
+        _zzzInstance.transform.localPosition = Vector3.zero;
     }
 
 	void Update () {
@@ -57,15 +55,9 @@ public class Sleeper : MonoBehaviour {
             _timer = 0;
             if (Random.value <= probability) {
                 IsSleeping = true;
-                _lettersList = new List<GameObject>();
-                for (int i = 0; i < numOfletters; i++) {
-                    _lettersList.Add(Instantiate(zzz));
-                    _lettersList.Last().transform.parent = transform;
-                }
             }
         } else {
             _timer += Time.deltaTime;
-            _lettersList.Clear();
         }
 	}
 

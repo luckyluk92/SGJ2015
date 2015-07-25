@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -117,24 +118,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &40828191
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 40828182}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &49487322
 Prefab:
   m_ObjectHideFlags: 0
@@ -189,80 +173,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 478168, guid: 44f9d0cd4cfbf6340bf9b20d53bcc09b, type: 2}
   m_PrefabInternal: {fileID: 2044575562}
---- !u!1 &85397398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 85397399}
-  - 23: {fileID: 85397401}
-  - 102: {fileID: 85397400}
-  m_Layer: 0
-  m_Name: ZzZ
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &85397399
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 85397398}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.150000006, y: .270000011, z: -1}
-  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1194949098}
-  m_RootOrder: 1
---- !u!102 &85397400
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 85397398}
-  m_Text: Z
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 25
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 0}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
---- !u!23 &85397401
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 85397398}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!4 &86153650 stripped
 Transform:
   m_PrefabParentObject: {fileID: 478168, guid: 44f9d0cd4cfbf6340bf9b20d53bcc09b, type: 2}
@@ -431,6 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -442,24 +353,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &104106580
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 104106571}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &108552323
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -668,24 +563,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &161102777
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 161102768}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &166856786
 Prefab:
   m_ObjectHideFlags: 0
@@ -755,6 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -766,24 +645,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &181809755
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 181809746}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &205018071
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -868,24 +731,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &213168708
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 213168699}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &221304649
 Prefab:
   m_ObjectHideFlags: 0
@@ -1429,6 +1275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -1440,24 +1287,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &349758603
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 349758594}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &358218973
 Prefab:
   m_ObjectHideFlags: 0
@@ -1496,6 +1326,10 @@ Prefab:
     - target: {fileID: 498656, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21282650, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
@@ -1759,6 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -1770,24 +1605,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &439935278
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 439935269}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &447455091 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 141558, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
@@ -1807,6 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -1818,24 +1637,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &447455100
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 447455091}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &470053694
 Prefab:
   m_ObjectHideFlags: 0
@@ -1901,6 +1703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -1912,24 +1715,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &483940164
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 483940155}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &529275913
 Prefab:
   m_ObjectHideFlags: 0
@@ -2237,6 +2023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -2248,24 +2035,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &620868607
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 620868598}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &625589383
 Prefab:
   m_ObjectHideFlags: 0
@@ -2423,6 +2193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -2434,24 +2205,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &661599911
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 661599902}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &678519276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,6 +2286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -2543,24 +2298,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &717566644
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 717566635}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &738761193
 Prefab:
   m_ObjectHideFlags: 0
@@ -2721,6 +2459,10 @@ Prefab:
     - target: {fileID: 141558, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
       propertyPath: m_Name
       value: Worker (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 410562, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
@@ -2944,6 +2686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -2955,24 +2698,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &839357437
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 839357428}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &860528562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,6 +2798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -3083,24 +2810,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &952954716
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952954707}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!4 &982000668 stripped
 Transform:
   m_PrefabParentObject: {fileID: 478168, guid: 44f9d0cd4cfbf6340bf9b20d53bcc09b, type: 2}
@@ -3621,6 +3331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -3632,24 +3343,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1095582725
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1095582716}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &1114572320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,6 +3431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -3748,24 +3443,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1123226760
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1123226751}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &1128392839
 Prefab:
   m_ObjectHideFlags: 0
@@ -3831,6 +3509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -3842,24 +3521,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1143313826
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1143313817}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &1165322985
 Prefab:
   m_ObjectHideFlags: 0
@@ -3993,6 +3655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -4004,24 +3667,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1194949106
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1194949097}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f64d1f359feb62840ad5609571a3740d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &1211442858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4135,7 +3781,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454342, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6174712, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
       propertyPath: m_IsTrigger
@@ -4387,6 +4033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -4398,7 +4045,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
+  time: .5
 --- !u!95 &1324359022
 Animator:
   serializedVersion: 3
@@ -4481,6 +4128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -4492,24 +4140,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1342481256
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1342481247}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &1352255352 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 141558, guid: 9775f1c8ef39bce4c965891c063b39c2, type: 2}
@@ -4529,6 +4160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -4540,24 +4172,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1352255361
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1352255352}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &1390694783
 Prefab:
   m_ObjectHideFlags: 0
@@ -4715,6 +4330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -4726,24 +4342,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1453953743
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1453953734}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1001 &1492007032
 Prefab:
   m_ObjectHideFlags: 0
@@ -4954,6 +4553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -4965,24 +4565,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1537926490
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1537926481}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!4 &1556102951 stripped
 Transform:
   m_PrefabParentObject: {fileID: 478168, guid: 44f9d0cd4cfbf6340bf9b20d53bcc09b, type: 2}
@@ -5296,6 +4879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -5307,24 +4891,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1597832359
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1597832350}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &1618409998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,6 +5508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -5952,24 +5520,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &1830743426
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1830743417}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &1870952841
 GameObject:
   m_ObjectHideFlags: 0
@@ -6118,7 +5669,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: .0196078438}
+  m_BackGroundColor: {r: .286764681, g: .286764681, b: .286764681, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -6169,8 +5720,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayTime: 30
+  currentTime: 0
   currentDay: 0
   wage: 60
+  mortgage: 300
   numberOfEmployees: 0
   money: 0
 --- !u!81 &1973549345
@@ -6711,6 +6264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df722d2646afa2a4d87a37707b70c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zzz: {fileID: 136270, guid: a5e3bc11551c5a643801076843dc7be6, type: 2}
   OnAsleep:
     m_PersistentCalls:
       m_Calls: []
@@ -6722,24 +6276,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   probability: .100000001
-  time: 2
---- !u!95 &2071859938
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2071859929}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  time: .5
 --- !u!1 &2079329518
 GameObject:
   m_ObjectHideFlags: 0
