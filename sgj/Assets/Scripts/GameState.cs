@@ -4,7 +4,7 @@ using System.Collections;
 public class GameState : MonoBehaviour {
 
 	public float dayTime = 60f;
-	private float _currentTime;
+	public float currentTime;
 	public int currentDay;
 
 	public float wage = 100;
@@ -18,7 +18,7 @@ public class GameState : MonoBehaviour {
     {
         get
         {
-            return _currentTime/dayTime;
+            return currentTime/dayTime;
         }
     }
 
@@ -33,7 +33,7 @@ public class GameState : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		_currentTime = 0;
+		currentTime = 0;
 		currentDay = 1;
 		money = 0;
 		numberOfEmployees = 0;
@@ -48,13 +48,13 @@ public class GameState : MonoBehaviour {
 
 	void TimeFlow()
 	{
-		if( _currentTime < dayTime)
+		if( currentTime < dayTime)
 		{
-			_currentTime += Time.deltaTime;
+			currentTime += Time.deltaTime;
 		}
 		else
 		{
-			_currentTime = 0;
+			currentTime = 0;
 			money -= numberOfEmployees * wage;
 
 			isThisTheEnd();
