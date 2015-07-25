@@ -7,10 +7,13 @@ public class employee : MonoBehaviour {
 	private float productivityLoss;
 	public float minProductivityLoss = 0.01f;
 	public float maxProductivityLoss = 0.1f;
+    
 	
 	public float productivityGain = 0.3f;
+    public float productivityGainByCollision = 0.1f;
 	public float stressLoss = 0.05f;
 	public float stressGain = 0.3f;
+    public float stressGainByCollision = 0.5f;
 	
 	public float flatMoneyGain = 20f;
 	
@@ -29,6 +32,16 @@ public class employee : MonoBehaviour {
 	private GameState _gameState;
 	
 	private bool _isBeingCreated;
+    private Sleeper _sleeper;
+
+    private Sleeper _Sleeper {
+        get {
+            if (_sleeper == null) {
+                _sleeper = GetComponent<Sleeper>();
+            }
+            return _sleeper;
+        }
+    }
 	
 	public bool IsProductive
 	{
@@ -55,6 +68,7 @@ public class employee : MonoBehaviour {
         _stress = initialStress;
 		_isBeingCreated = true;
 		CalculateProductivity();
+        _Sleeper.OnAwakening.AddListener(OnAwakening);
 	}
 	
 	// Update is called once per frame
@@ -77,6 +91,10 @@ public class employee : MonoBehaviour {
 		{
 			_stress = Mathf.Clamp(_stress - stressLoss*Time.deltaTime, 0, 1f);
 			progressBar.SendMessage("ProgressUpdated", _stress);
+            if (_Sleeper.IsSleeping) {
+                _stress = Mathf.Clamp((_stress - stressLoss * Time.deltaTime), 0, 1f);
+                DecreaseProductivity();
+            }
 		}
 	}
 
@@ -114,8 +132,23 @@ public class employee : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D() {
-		ScreamedAt();
-		Debug.Log("Boss screamed...");
-		CalculateProductivity();
+        ScreamedAt();
+
+        if (!_Sleeper.IsSleeping) {
+            Debug.Log("Boss screamed...");
+            CalculateProductivity();
+        } else {
+            productivityLoss = 0; 
+        }
 	}
+
+    void OnAwakening() {
+        _stress = Mathf.Clamp(_stress + 0.1f * _stress, 0, 1f);
+    }
+
+    void OnCollisionEnter2D() {
+        _productivity = Mathf.Clamp01(_productivity - productivityGainByCollision);
+        DecreaseProductivity();
+        _stress = Mathf.Clamp01(_stress + stressGainByCollision);
+    }
 }

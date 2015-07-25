@@ -121,9 +121,4 @@ public class Range : MonoBehaviour {
     void HideCircle() {
         _spriteRenderer = null;
     }
-
-    void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, ActualRadius * transform.localScale.x);
-    }
 }
