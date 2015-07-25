@@ -14,12 +14,28 @@ public class EarningsDisplayer : MonoBehaviour {
         TextMesh mesh = obj.GetComponent<TextMesh>();
         if(gain > 0)
         {
-            mesh.text = string.Format("{0:C}", Convert.ToDecimal(gain));
+            mesh.color = Color.green;
+            if(gain < 50) {
+                mesh.text = "$";
+                mesh.characterSize = .3f;
+            } else {
+                mesh.text = "$$";
+                mesh.characterSize = .45f;
+            }
+        }
+        else if (gain == 0) {
+            GameObject.Destroy(obj);
         }
         else
         {
             mesh.color = Color.red;
-            mesh.text = "$0.00";
+            if(gain > -50) {
+                mesh.text = "$";
+                mesh.characterSize = .3f;
+            } else {
+                mesh.text = "$$";
+                mesh.characterSize = .45f;
+            }
         }
     }
 }
