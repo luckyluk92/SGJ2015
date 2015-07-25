@@ -57,7 +57,7 @@ public class Range : MonoBehaviour {
 
     public void CreateCollider() {
         var collider = _circleInstance.AddComponent<CircleCollider2D>();
-        collider.radius = ActualRadius;
+        collider.radius = ActualRadius / _circleInstance.transform.localScale.x;
         collider.isTrigger = true;
         int index = Random.Range(0, clips.Count - 1);
         audioSource.clip = clips[index];

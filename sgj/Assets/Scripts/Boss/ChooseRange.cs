@@ -34,7 +34,6 @@ public class ChooseRange : MonoBehaviour {
                 _Range.Started = false;
                 _wasDown = false;
                 _Range.CreateCollider();
-                Debug.Log("Chosen radius: " + _Range.ActualRadius);
                 _timeCooler.StartCooling(coolTime);
             }
         } else {
