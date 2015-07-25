@@ -8,6 +8,7 @@ public class GameState : MonoBehaviour {
 	public int currentDay;
 
 	public float wage = 100;
+    public float mortgage = 300;
 
 	//[HideInInspector]
 	public float numberOfEmployees;
@@ -26,7 +27,7 @@ public class GameState : MonoBehaviour {
     {
         get
         {
-            return numberOfEmployees * wage;
+            return numberOfEmployees * wage + mortgage;
         }
     }
 	
@@ -55,7 +56,7 @@ public class GameState : MonoBehaviour {
 		else
 		{
 			currentTime = 0;
-			money -= numberOfEmployees * wage;
+			money -= (numberOfEmployees * wage + mortgage);
 
 			isThisTheEnd();
 
