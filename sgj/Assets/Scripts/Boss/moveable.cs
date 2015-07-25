@@ -7,40 +7,41 @@ public class Moveable : MonoBehaviour {
 	//public float rotSpeed = 20;
 
     private Rigidbody2D _rigidBody;
+    private Vector2 _direction;
 
     void Start() {
         _rigidBody = GetComponent<Rigidbody2D>();
     }
-	void FixedUpdate () {
+
+    void Update() {
         if (Input.GetKey(KeyCode.W)) {
-            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, CalculateSpeed());
-        } 
+            _direction = Vector2.up;
+        }
 
         if (Input.GetKey(KeyCode.S)) {
-            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, -CalculateSpeed());
+            _direction = Vector2.down;
         }
 
         if (Input.GetKey(KeyCode.A)) {
-            _rigidBody.velocity = new Vector2(-CalculateSpeed(), _rigidBody.velocity.y);
+            _direction = new Vector2(-1, _direction.y);
         }
 
         if (Input.GetKey(KeyCode.D)) {
-            _rigidBody.velocity = new Vector2(CalculateSpeed(), _rigidBody.velocity.y);
-        }
-        
-        
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) {
-            _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, 0);
-        } else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)){
-            _rigidBody.velocity = new Vector2(0, _rigidBody.velocity.y);
+            _direction = new Vector2(1, _direction.y);
         }
 
-        //if (Input.GetKey(KeyCode.Q)) {
-        //    transform.Rotate(new Vector3(0,0,1)*rotSpeed*Time.deltaTime,Space.Self);
-        //}
-        //if (Input.GetKey(KeyCode.E)) {
-        //    transform.Rotate(new Vector3(0,0,-1)*rotSpeed*Time.deltaTime,Space.Self);
-        //}
+
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) {
+            _direction = new Vector2(_direction.x, 0);
+        }
+        
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) {
+            _direction = new Vector2(0, _direction.y);
+        }
+    }
+
+	void FixedUpdate () {
+        _rigidBody.velocity = _direction * CalculateSpeed();
 	}
 
     float CalculateSpeed() {
