@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21260138}
   - 61: {fileID: 6183644}
   - 50: {fileID: 5080118}
-  - 114: {fileID: 11469076}
+  - 114: {fileID: 11482168}
   m_Layer: 8
   m_Name: paper
   m_TagString: Untagged
@@ -60,7 +60,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .600000024, y: .800000012}
---- !u!114 &11469076
+--- !u!114 &11482168
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

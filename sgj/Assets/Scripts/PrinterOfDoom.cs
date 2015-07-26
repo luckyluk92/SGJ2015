@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.Collections;
 
 public class PrinterOfDoom : MonoBehaviour {
@@ -21,12 +22,17 @@ public class PrinterOfDoom : MonoBehaviour {
     public float forceScalar = 1;
 
     private float _shootingTimer = 0;
+    private AudioSource _source;
 
     public bool IsShooting { get; private set; }
+
+    public List<AudioClip> hitClips;
+    public GameObject hitPlayer;
 
 	// Use this for initialization
 	void Start () 
 	{
+        _source = GetComponent<AudioSource>();
         _sprite = GetComponent<SpriteRenderer>();
         stressCollider.enabled = false;
 		RandomizeData();
@@ -80,6 +86,9 @@ public class PrinterOfDoom : MonoBehaviour {
 		if(collision.gameObject.name == "Boss")
 		{
 			--_healthPoints;
+            if(IsShooting) {
+                hitPlayer.GetComponent<AudioSource>().PlayOneShot(hitClips[Random.Range(0, hitClips.Count -1)]);
+            }
             if (_healthPoints == 0) {
                 IsShooting = false;
             }
@@ -94,10 +103,10 @@ public class PrinterOfDoom : MonoBehaviour {
         paper.transform.position = paperPoint.transform.position;
         paper.transform.Rotate(paperPoint.transform.rotation.eulerAngles + new Vector3(0,0, Random.Range(-30,30)));
         var direction = paper.transform.rotation * new Vector3(0, transform.position.y, 0);
+        _source.Play();
 
         var sr = paper.GetComponent<SpriteRenderer>();
         var center = sr.bounds.center;
         paper.GetComponent<Rigidbody2D>().AddForceAtPosition(-(new Vector2(direction.x, direction.y)) * (forceScalar + Random.Range(-forceScalar, forceScalar)), paper.transform.position);
-        
     }
 }
