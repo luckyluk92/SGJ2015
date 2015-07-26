@@ -18,7 +18,7 @@ GameObject:
   - 199: {fileID: 19986328}
   - 114: {fileID: 11485546}
   - 82: {fileID: 8286820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Worker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 410562}
   - 114: {fileID: 11441446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Progress Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,6 +183,7 @@ MonoBehaviour:
   stressLoss: .0199999996
   stressGain: .25
   stressGainByCollision: .300000012
+  stressGainByPrinter: .0500000007
   flatMoneyGain: 12
   initialProductivity: 1
   initialStress: 0

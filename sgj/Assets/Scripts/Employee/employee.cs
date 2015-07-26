@@ -15,6 +15,7 @@ public class employee : MonoBehaviour {
 	public float stressLoss = 0.05f;
 	public float stressGain = 0.3f;
     public float stressGainByCollision = 0.5f;
+    public float stressGainByPrinter = 0.05f;
 	
 	public float flatMoneyGain = 20f;
 	
@@ -181,6 +182,13 @@ public class employee : MonoBehaviour {
                 if(_stress < 1f) 
                     StartCoroutine(Bleed());
             }
+        } 
+    }
+
+    void OnTriggerStay2D(Collider2D coll) {
+        if (LayerMask.LayerToName(coll.gameObject.layer) == "stressCollider") {
+            _stress = Mathf.Clamp01(_stress + stressGainByPrinter * Time.fixedDeltaTime);
+            progressBar.SendMessage("ProgressUpdated", _stress);
         }
     }
 }

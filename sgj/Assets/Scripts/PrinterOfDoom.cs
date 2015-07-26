@@ -12,12 +12,23 @@ public class PrinterOfDoom : MonoBehaviour {
     private SpriteRenderer _sprite;
 	public int minHealth = 1;
 	public int maxHealth = 5;
-	
+
+    public CircleCollider2D stressCollider;
+    public GameObject paperPrefab;
+    public GameObject paperPoint;
+    public float probabilityOfPaperShooting = 0.05f;
+    public float frequencyOfShooting = 0.1f;
+    public float forceScalar = 1;
+
+    private float _shootingTimer = 0;
+
+    public bool IsShooting { get; private set; }
 
 	// Use this for initialization
 	void Start () 
 	{
         _sprite = GetComponent<SpriteRenderer>();
+        stressCollider.enabled = false;
 		RandomizeData();
 	}
 	
@@ -32,9 +43,19 @@ public class PrinterOfDoom : MonoBehaviour {
 			if(_healthPoints == 0) {
 				RandomizeData();
             } else {
-
+                
             }
 		}
+
+        if (IsShooting) {
+            stressCollider.enabled = true;
+            if (_shootingTimer >= frequencyOfShooting) {
+                ShootPaper();
+                _shootingTimer = 0;
+            } else {
+                _shootingTimer += Time.deltaTime;
+            }
+        }
 	}
 
 	void RandomizeData()
@@ -42,6 +63,9 @@ public class PrinterOfDoom : MonoBehaviour {
 		_currentTime = 0;
 		_timeOfSelfAnihillation = Random.Range(minTime, maxTime);
 		_healthPoints = Random.Range(minHealth, maxHealth);
+        if (Random.value <= probabilityOfPaperShooting) {
+            IsShooting = true;
+        }
 	}
 
 
@@ -56,8 +80,24 @@ public class PrinterOfDoom : MonoBehaviour {
 		if(collision.gameObject.name == "Boss")
 		{
 			--_healthPoints;
+            if (_healthPoints == 0) {
+                IsShooting = false;
+            }
+
             gameObject.SendMessage("DoShake");
             StartCoroutine(HandleHit());
 		}
 	}
+
+    void ShootPaper() {
+        var paper = Instantiate(paperPrefab);
+        paper.transform.position = paperPoint.transform.position;
+        paper.transform.Rotate(paperPoint.transform.rotation.eulerAngles + new Vector3(0,0, Random.Range(-30,30)));
+        var direction = paper.transform.rotation * new Vector3(0, transform.position.y, 0);
+
+        var sr = paper.GetComponent<SpriteRenderer>();
+        var center = sr.bounds.center;
+        paper.GetComponent<Rigidbody2D>().AddForceAtPosition(-(new Vector2(direction.x, direction.y)) * (forceScalar + Random.Range(-forceScalar, forceScalar)), paper.transform.position);
+        
+    }
 }
