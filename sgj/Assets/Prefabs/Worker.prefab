@@ -1494,6 +1494,10 @@ Prefab:
       propertyPath: stressGainByCollision
       value: .300000012
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141558}

@@ -47,8 +47,8 @@ public class PrinterOfDoom : MonoBehaviour {
 
     IEnumerator HandleHit()
     {
-        _sprite.color = new Color(1f, 0f, 0f, 0.4f);
-        yield return new WaitForSeconds(0.05f);
+        _sprite.color = new Color(1f, 0f, 0f);
+        yield return new WaitForSeconds(0.02f);
         _sprite.color = Color.white;
     }
 	void OnCollisionEnter2D(Collision2D collision)
@@ -57,9 +57,6 @@ public class PrinterOfDoom : MonoBehaviour {
 		{
 			--_healthPoints;
             gameObject.SendMessage("DoShake");
-            var rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            var forceVector = -rb.velocity.normalized * 20f;
-            rb.AddForce(forceVector, ForceMode2D.Impulse);
             StartCoroutine(HandleHit());
 		}
 	}
