@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.Collections;
 
 public class employee : MonoBehaviour {
@@ -27,12 +28,17 @@ public class employee : MonoBehaviour {
 	
 	public Color productiveColor = new Color(0f, 1f, 0f);
 	public GameObject progressBar;
+
+    public List<AudioClip> soundsOfGettingHit;
+    private AudioSource _audioSource;
 	
 	private SpriteRenderer _spriteRenderer;
 	private GameState _gameState;
 	
 	private bool _isBeingCreated;
     private Sleeper _sleeper;
+
+    private ParticleSystem _particleSystem;
 
     private Sleeper _Sleeper {
         get {
@@ -69,14 +75,16 @@ public class employee : MonoBehaviour {
 		_isBeingCreated = true;
 		CalculateProductivity();
         _Sleeper.OnAwakening.AddListener(OnAwakening);
+        _audioSource = GetComponent<AudioSource>();
+        _particleSystem = GetComponent<ParticleSystem>();
 	}
 	
     IEnumerator Dieing() {
-        var system = gameObject.GetComponent<ParticleSystem>();
-        if(!system.isPlaying)
-            system.Play();
+        if(!_particleSystem.isPlaying)
+            _particleSystem.Play();
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
+        _gameState.SendMessage("EmployeeDied");
     }
 
 	// Update is called once per frame
@@ -142,7 +150,6 @@ public class employee : MonoBehaviour {
         ScreamedAt();
 
         if (!_Sleeper.IsSleeping) {
-            Debug.Log("Boss screamed...");
             CalculateProductivity();
         } else {
             productivityLoss = 0; 
@@ -153,12 +160,27 @@ public class employee : MonoBehaviour {
         _stress = Mathf.Clamp(_stress + 0.1f * _stress, 0, 1f);
     }
 
+    IEnumerator Bleed() {
+        if(!_particleSystem.isPlaying) {
+            _particleSystem.Play();
+        }
+        yield return new WaitForSeconds(0.4f);
+        _particleSystem.Stop();
+        _particleSystem.time = 0f;
+    }
+
     void OnCollisionEnter2D(Collision2D coll) {
-        if(coll.gameObject.name == "Boss" && !_Sleeper.IsSleeping) {
-            _productivity = Mathf.Clamp01(_productivity + productivityGainByCollision);
-            DecreaseProductivity();
-            _stress = Mathf.Clamp01(_stress + stressGainByCollision);
-            progressBar.SendMessage("ProgressUpdated", _stress);
+        if(coll.gameObject.name == "Boss") {
+            _audioSource.clip = soundsOfGettingHit[Random.Range(0, soundsOfGettingHit.Count -1)];
+            _audioSource.Play();
+            if(!_Sleeper.IsSleeping) {
+                _productivity = Mathf.Clamp01(_productivity + productivityGainByCollision);
+                DecreaseProductivity();
+                _stress = Mathf.Clamp01(_stress + stressGainByCollision);
+                progressBar.SendMessage("ProgressUpdated", _stress);
+                if(_stress < 1f) 
+                    StartCoroutine(Bleed());
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ public class ChooseRange : MonoBehaviour {
 
     private Cooldown _timeCooler;
     private bool _wasDown;
+    private SpriteRenderer _renderer;
 
     private Range _range;
     private Range _Range {
@@ -21,6 +22,7 @@ public class ChooseRange : MonoBehaviour {
 
     void Start() {
         _timeCooler = new Cooldown();
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
 	void Update () {
@@ -35,9 +37,11 @@ public class ChooseRange : MonoBehaviour {
                 _wasDown = false;
                 _Range.CreateCollider();
                 _timeCooler.StartCooling(coolTime);
+                _renderer.color = Color.black;
             }
         } else {
             _timeCooler.Update(Time.deltaTime);
+            _renderer.color = Color.Lerp(_renderer.color, Color.red, 2*Time.deltaTime);
         }
 	}
 }
