@@ -4,6 +4,10 @@ using System.Collections;
 public class SceneLoader : MonoBehaviour {
 
     public void ToTheGame() {
-        Application.LoadLevel("Main");
+        Application.LoadLevel("Menu");
+    }
+
+    public void Sound() {
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }
