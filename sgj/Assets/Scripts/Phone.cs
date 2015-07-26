@@ -23,6 +23,7 @@ public class Phone : MonoBehaviour {
     public AudioClip hangupClip;
     public AudioClip pickupClip;
     public AudioClip callingClip;
+    public AudioClip talkingClip;
 
     private AudioSource _source;
 	private GameState _gameState;
@@ -89,6 +90,15 @@ public class Phone : MonoBehaviour {
 		speakingTime = Random.Range(minSpeakingTime, maxSpeakingTime);
 	}
 
+    IEnumerator Blab() {
+        yield return new WaitForSeconds(1f);
+        if(isBossSpeaking) {
+            _source.pitch = 1f;
+            _source.clip = talkingClip;
+            _source.Play();
+        }
+    }
+
     void StartTalking()
     {
         _source.Stop();
@@ -98,6 +108,8 @@ public class Phone : MonoBehaviour {
 
         isRinging = false;
         isBossSpeaking = true;
+        StartCoroutine(Blab());
+
         gameObject.GetComponent<Animator>().SetBool("Calling", false);
 
         progressBar.GetComponent<StressProgressBar>().isVisible = true;
@@ -108,6 +120,7 @@ public class Phone : MonoBehaviour {
         if(Mathf.Abs(_totalTime - speakingTime) < 0.1f)
         {
             _source.Stop();
+            _source.pitch = .8f;
             _source.loop = false;
             _source.PlayOneShot(hangupClip);
             _gameState.money += moneyPerSecond*speakingTime;
