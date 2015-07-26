@@ -28,12 +28,14 @@ public class PauseMenu : MonoBehaviour {
     public void Pause()
     {
         Time.timeScale = 0f;
+        Camera.main.GetComponent<AudioSource>().Pause();
         panel.SetActive(true);
     }
     
     public void Resume()
     {
         Time.timeScale = 1f;
+        Camera.main.GetComponent<AudioSource>().UnPause();
         panel.SetActive(false);
     }
 

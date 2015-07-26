@@ -16,6 +16,6 @@ public class ExpensesIndicator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        expensesText.text = string.Format("Expenses: {0:C}", Convert.ToDecimal(state.Expenses));
+        expensesText.text = string.Format("Expected Expenses: {0:C}", Convert.ToDecimal(state.Expenses));
 	}
 }

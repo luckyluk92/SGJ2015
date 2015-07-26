@@ -1,5 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GameData;
+
+namespace GameData {
+    public class ScoreKeeper {
+        private static ScoreKeeper _instance;
+
+        public int Days
+        {
+            get;
+            set;
+        }
+
+        public static ScoreKeeper Instance
+        {
+            get {
+                if(_instance == null) {
+                    _instance = new ScoreKeeper();
+                }
+                return _instance;
+            }
+        }
+
+        private ScoreKeeper(){
+        }
+    }
+}
 
 public class GameState : MonoBehaviour {
 
@@ -68,8 +94,10 @@ public class GameState : MonoBehaviour {
 
 	void isThisTheEnd()
 	{
-		if(money <= 0)
-			Debug.Log("Game Over"); //TODO
+		if(money <= 0 || numberOfEmployees == 0) {
+            ScoreKeeper.Instance.Days = currentDay;
+            Application.LoadLevel("GameOver");
+        }
 	}
 
     void EmployeeDied()
