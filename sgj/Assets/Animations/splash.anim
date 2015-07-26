@@ -33,6 +33,11 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
+      - time: 2.38333344
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_Color.r
@@ -57,6 +62,11 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
+      - time: 2.38333344
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_Color.g
@@ -77,6 +87,11 @@ AnimationClip:
         outSlope: 0
         tangentMode: 10
       - time: 2
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 2.38333344
         value: 1
         inSlope: 0
         outSlope: 0
@@ -112,13 +127,33 @@ AnimationClip:
         tangentMode: 10
       - time: 1
         value: 1
-        inSlope: .299999952
-        outSlope: .299999952
+        inSlope: .328166604
+        outSlope: .328166604
         tangentMode: 10
-      - time: 2
-        value: 1
-        inSlope: 0
-        outSlope: 0
+      - time: 1.56666672
+        value: 1.03192222
+        inSlope: .0488592125
+        outSlope: .0488592125
+        tangentMode: 10
+      - time: 1.86666667
+        value: 1.04433775
+        inSlope: -.135400534
+        outSlope: -.135400534
+        tangentMode: 10
+      - time: 1.93333328
+        value: 1.02352536
+        inSlope: -.895205617
+        outSlope: -.895205617
+        tangentMode: 10
+      - time: 2.2166667
+        value: .604694784
+        inSlope: -2.55319595
+        outSlope: -2.55319595
+        tangentMode: 10
+      - time: 2.38333344
+        value: 0
+        inSlope: -3.62816691
+        outSlope: -3.62816691
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -162,7 +197,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: 2
+    m_StopTime: 2.38333344
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -195,6 +230,11 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
+      - time: 2.38333344
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_Color.r
@@ -219,6 +259,11 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
+      - time: 2.38333344
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_Color.g
@@ -239,6 +284,11 @@ AnimationClip:
         outSlope: 0
         tangentMode: 10
       - time: 2
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 2.38333344
         value: 1
         inSlope: 0
         outSlope: 0
@@ -274,13 +324,33 @@ AnimationClip:
         tangentMode: 10
       - time: 1
         value: 1
-        inSlope: .299999952
-        outSlope: .299999952
+        inSlope: .328166604
+        outSlope: .328166604
         tangentMode: 10
-      - time: 2
-        value: 1
-        inSlope: 0
-        outSlope: 0
+      - time: 1.56666672
+        value: 1.03192222
+        inSlope: .0488592125
+        outSlope: .0488592125
+        tangentMode: 10
+      - time: 1.86666667
+        value: 1.04433775
+        inSlope: -.135400534
+        outSlope: -.135400534
+        tangentMode: 10
+      - time: 1.93333328
+        value: 1.02352536
+        inSlope: -.895205617
+        outSlope: -.895205617
+        tangentMode: 10
+      - time: 2.2166667
+        value: .604694784
+        inSlope: -2.55319595
+        outSlope: -2.55319595
+        tangentMode: 10
+      - time: 2.38333344
+        value: 0
+        inSlope: -3.62816691
+        outSlope: -3.62816691
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -293,7 +363,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 2
+  - time: 2.38333344
     functionName: ToTheGame
     data: 
     objectReferenceParameter: {fileID: 0}
