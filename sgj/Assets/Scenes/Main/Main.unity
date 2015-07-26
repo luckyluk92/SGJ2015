@@ -1861,8 +1861,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b5c3cdb47b203489b6c5ec73b05a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeOfSelfAnihillation: 0
   minTime: 10
   maxTime: 30
+  _currentTime: 0
+  _healthPoints: 0
+  _sprite: {fileID: 0}
   minHealth: 1
   maxHealth: 5
 --- !u!1 &534040259
@@ -4311,7 +4315,7 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 11471330, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
+    - {fileID: 0}
     - {fileID: 8203432, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
     - {fileID: 11475464, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
     - {fileID: 11421522, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
