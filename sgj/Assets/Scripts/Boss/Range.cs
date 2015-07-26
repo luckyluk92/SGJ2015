@@ -84,8 +84,6 @@ public class Range : MonoBehaviour {
             ActualRadius = RangeChangeFunction();
             UpdateMoveType();
 
-            Debug.Log(_Renderer);
-            Debug.Log(_spritesSize);
             if(_spriteRenderer != null)
                 _spriteRenderer.transform.localScale = new Vector3(2*ActualRadius / _spritesSize.x, 2*ActualRadius / _spritesSize.y, 1);
         } else {
