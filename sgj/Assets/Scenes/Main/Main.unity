@@ -2094,14 +2094,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df946a2ff291f4545aa5ea979fbefeab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 10
-  maxTime: 30
-  minHealth: 1
-  maxHealth: 5
+  minTime: 20
+  maxTime: 35
+  minHealth: 8
+  maxHealth: 14
   stressCollider: {fileID: 38651340}
   paperPrefab: {fileID: 131322, guid: 012fa1c611e095f4eafc9da76d3b8012, type: 2}
   paperPoint: {fileID: 1415159154}
-  probabilityOfPaperShooting: 1
+  probabilityOfPaperShooting: .400000006
   frequencyOfShooting: .800000012
   forceScalar: .200000003
   hitClips:
@@ -3939,7 +3939,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1d89caba03a7eb040a1896a758408030, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .5
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 1
   Mute: 0

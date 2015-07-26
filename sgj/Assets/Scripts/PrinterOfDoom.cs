@@ -46,12 +46,6 @@ public class PrinterOfDoom : MonoBehaviour {
 
 		if(_currentTime >= _timeOfSelfAnihillation)
 		{
-			if(_healthPoints == 0) {
-				RandomizeData();
-            } else {
-                
-            }
-
             if (Random.value <= probabilityOfPaperShooting) {
                 IsShooting = true;
             }
@@ -90,12 +84,13 @@ public class PrinterOfDoom : MonoBehaviour {
 	{
 		if(collision.gameObject.name == "Boss")
 		{
-			--_healthPoints;
+            hitPlayer.GetComponent<AudioSource>().PlayOneShot(hitClips[Random.Range(0, hitClips.Count -1)]);
             if(IsShooting) {
-                hitPlayer.GetComponent<AudioSource>().PlayOneShot(hitClips[Random.Range(0, hitClips.Count -1)]);
+                --_healthPoints;
             }
             if (_healthPoints == 0) {
                 IsShooting = false;
+                RandomizeData();
             }
 
             gameObject.SendMessage("DoShake");
