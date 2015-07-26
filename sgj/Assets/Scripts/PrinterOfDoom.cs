@@ -51,6 +51,10 @@ public class PrinterOfDoom : MonoBehaviour {
             } else {
                 
             }
+
+            if (Random.value <= probabilityOfPaperShooting) {
+                IsShooting = true;
+            }
 		}
 
         if (IsShooting) {
@@ -61,6 +65,9 @@ public class PrinterOfDoom : MonoBehaviour {
             } else {
                 _shootingTimer += Time.deltaTime;
             }
+        } else {
+            stressCollider.enabled = false;
+            _shootingTimer = 0;
         }
 	}
 
@@ -69,9 +76,7 @@ public class PrinterOfDoom : MonoBehaviour {
 		_currentTime = 0;
 		_timeOfSelfAnihillation = Random.Range(minTime, maxTime);
 		_healthPoints = Random.Range(minHealth, maxHealth);
-        if (Random.value <= probabilityOfPaperShooting) {
-            IsShooting = true;
-        }
+        
 	}
 
 
