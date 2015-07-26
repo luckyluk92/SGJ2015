@@ -2103,7 +2103,7 @@ MonoBehaviour:
   paperPoint: {fileID: 1415159154}
   probabilityOfPaperShooting: .400000006
   frequencyOfShooting: .800000012
-  forceScalar: .200000003
+  forceScalar: .300000012
   hitClips:
   - {fileID: 8300000, guid: 1e468cffecd59b24d879e3e72f3d1841, type: 3}
   - {fileID: 8300000, guid: 5e85cb52d664f6c41a1f54a52f4e6fd5, type: 3}
@@ -4919,6 +4919,10 @@ Prefab:
     - target: {fileID: 454342, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482910, guid: db8fd5871323aca4db742955ecebf13b, type: 2}
+      propertyPath: speed
+      value: .0599999987
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db8fd5871323aca4db742955ecebf13b, type: 2}

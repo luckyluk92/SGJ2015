@@ -87,6 +87,7 @@ public class GameState : MonoBehaviour {
 			isThisTheEnd();
 
 			++currentDay; 
+            mortgage += 100;
 			//Load next Day
 		}
 	
