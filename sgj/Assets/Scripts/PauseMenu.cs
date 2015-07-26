@@ -1,48 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
 
-	public Transform resumeButtonPos, exitButtonPos; 
-	public GameObject resumeButton, exitButton;
+    private Canvas _canvas;
+    public GameObject panel;
 
-	private bool _didEnterPause, _isPaused;
-	// Use this for initialization
 	void Start () 
 	{
-		_didEnterPause = false;
-		_isPaused = false;
-
-		Time.timeScale = 1f;
+        _canvas = GetComponent<Canvas>();
+        panel.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		Pause();
-		SpawnButtons();
-	
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(Time.timeScale == 1f) {
+                Pause();
+            } else {
+                Resume();
+            }
+        }
 	}
 
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        panel.SetActive(true);
+    }
+    
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        panel.SetActive(false);
+    }
 
-	void Pause()
-	{
-		if(Time.timeScale == 1 && Input.GetKeyDown(KeyCode.Escape))
-			Time.timeScale = 0;
-	}
-
-	void SpawnButtons()
-	{
-		if(Time.timeScale == 0f && !_isPaused)
-			_didEnterPause = true;
-		
-		if(_didEnterPause == true)
-		{
-			_didEnterPause = false;
-			_isPaused = true;
-			
-			Instantiate(resumeButton, resumeButtonPos.position, resumeButtonPos.rotation);
-			Instantiate(exitButton, exitButtonPos.position, exitButtonPos.rotation);
-		}
-	}
+    public void Quit()
+    {
+        Time.timeScale = 1f;
+        Application.LoadLevel("Menu");
+    }
 }
