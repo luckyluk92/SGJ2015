@@ -1,6 +1,6 @@
 #Welcome to Corp La Beouf!
 
-We are team Romb and we present you our evil corporation simulator!
+We are team Romb and we present you our evil corporation simulator! The game was made in 46 hours during the Slavic Game Jam 2015.
 ##IDEA
 
 You take the role of an evil manager who needs to MOTIVATE the employees in order to earn money and not bankrupt as long as possible
