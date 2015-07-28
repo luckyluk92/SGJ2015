@@ -17,7 +17,7 @@ Work cannot be efficient without a printer! Of course they tend to stop working.
 ###PHONE
 
 Sometimes you may get a phonecall. You may just ignore it, but it gives you a small money penalty if you do. Ignoring your clients never seemed like a good deal. If you decide to pick it up - blabbing about some corporate business nets really nice some profits so watch for these phonecalls! If you are fast enough to reach the phone that is. Yes, we didn't think of a cellphone.
-CONTROLS
+###CONTROLS
 
 You move your character using WASD and shout nice phrases which motivate them to work by holding SPACEBAR and releasing it in the right moment to get the right area of influence for the shout. The shouting has a small cooldown so you don't get your throat sore or stress your employees too fast.
 ##CREDITS
